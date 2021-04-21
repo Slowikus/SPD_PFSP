@@ -14,10 +14,10 @@ import numpy as np
 #     return C, int(C[len(pi)-1,m-1])
 
 
-def CMAX(pi, n, m):
-    n = len(pi)
+def CMAX(pi, n, m):     # dla x maszyn
+    n = len(pi)         # len() - dlugosc
     m = len(pi[0].czasy)
-    C = np.zeros((n,m), dtype=int)
+    C = np.zeros((n,m), dtype=int)      # stworzenie zerowego wektora
 
     C[0,0] = pi[0].czasy[0]
 
