@@ -1,7 +1,8 @@
+import numpy as np
 from RandomNumberGenerator import *
-from BF import *
-from Cmax import *
-from BnB import *
+# from BF import *
+# from Cmax import *
+# from BnB import *
 
 n = 6   # zadania
 m = 2   # maszyny
@@ -14,7 +15,7 @@ class zadanie:
         self.numer = numer
         self.czasy = []
         for i in range(m):
-            self.czasy.append(rand.nextint(1,29))
+            self.czasy.append(rand.nextInt(1,29))
 
 zadania = []
 for k in range(n):
