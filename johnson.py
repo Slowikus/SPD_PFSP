@@ -2,9 +2,7 @@ from copy import copy
 import numpy as np
 from operator import attrgetter
 from RandomNumberGenerator import *
-# from BF import *
 from cmax import *
-# from BnB import *
 
 n = int(input("podaj ilosc zadan: "))   # zadania 6
 m = int(input("podaj ilosc maszyn: "))  # maszyny 2
@@ -45,7 +43,7 @@ def Johnson(zadania):
             pi[k] = copy(numer_zadania)
             k -=1
         N.remove(numer_zadania)
-    
+    print("---------------------\nJOHNSON")
     print("---------------------\npi: ",end = " ")
     for i in pi:
         print(i.numer + 1, end = " ")
