@@ -8,30 +8,30 @@ n = int(input("podaj ilosc zadan: "))   # zadania 6
 m = int(input("podaj ilosc maszyn: "))  # maszyny 2
 Z = int(input("podaj ziarno: "))   # seed 1
 
-rand = RandomNumberGenerator(Z)
+random = RandomNumberGenerator(Z)
 
-class zadanie:
+class zrob:
     def __init__(self,numer):
         self.numer = numer
         self.czasy = []
         for i in range(m):
-            self.czasy.append(rand.nextInt(1,29))   # dodawanie czasów na m maszyn
+            self.czasy.append(random.nextInt(1,29))   # dodawanie czasów na m maszyn
 
-zadania = []    # pusta tabela zadan
+tab_zadania = []    # pusta tabela zadan
 for k in range(n):
-    zadania.append(zadanie(k))  # przydzielanie zadań z przydzielonymi czasami na m maszyn
+    tab_zadania.append(zrob(k))  # przydzielanie zadań z przydzielonymi czasami na m maszyn
 
 print("---------------------\nczasy zadan:")
-for i in zadania:
+for i in tab_zadania:
     print(i.czasy)
 
-def Johnson(zadania):
+def Johnson(tab_zadania):
     pi = np.zeros((n,1),dtype=int)  # stworzenie zerowego wektora
     l = 0
     k = n-1
 
-    N = copy(zadania)  # skopiowanie zadan
-    pi = copy(zadania)
+    N = copy(tab_zadania)  # skopiowanie zadan
+    pi = copy(tab_zadania)
 
     while N:
         numer_zadania = min(N,key=attrgetter("czasy"))  # znajdowanie zadania o najkrótszym czasie wykonywania
@@ -50,7 +50,7 @@ def Johnson(zadania):
     print()
     return pi
 
-pi = Johnson(zadania)
+pi = Johnson(tab_zadania)
 
 a,b = CMAX(pi, n, m)
 print("---------------------\nC:\n",a)
